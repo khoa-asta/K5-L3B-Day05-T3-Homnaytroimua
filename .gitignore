@@ -2,3 +2,9 @@
 .claude/
 CLAUDE.md
 CLAUDE.local.md
+
+# Biến môi trường (API key) — không bao giờ commit
+.env
+
+# Python
+__pycache__/

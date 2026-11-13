@@ -41,3 +41,14 @@
 | 10 | Màn nhân viên: tóm tắt do AI soạn, tin khách nguyên văn, nhật ký từng lần AI gọi tool (giờ, mức, ai bấm) | PAIR Errors + Graceful Failure (ai được báo) | — |
 
 **Phần mock:** dữ liệu đặt chỗ (dữ liệu dựng của track); câu trả lời của trợ lý (luật dựng sẵn theo từ khoá, không phải AI thật); việc xuất vé (giả lập bằng đồng hồ 5 phút hoặc nút demo); trang Hoàn tiền (chỉ báo "đã mở", ngoài phạm vi); các nút của nhân viên.
+
+## Lời gọi AI thật (bonus) — `ai-call/`
+
+Script [`ai-call/ai_chon_tool.py`](ai-call/ai_chon_tool.py) gọi OpenAI thật cho quyết định chính: **đọc tin khách → chọn tool**. Sau đó **cổng mức tự chủ** (code, không phải model) áp spec §4: `doi_chuyen_bay` chỉ thành thẻ xác nhận, `gui_yeu_cau_hoan_ve` bị hạ xuống bản nháp, trẻ dưới 12 tuổi bay một mình → chuyển nhân viên, giữ chỗ chỉ khi chuyến đủ chỗ. Nếu cổng đã chặn, câu trả lời của model cũng bị thay để trợ lý không hứa việc chưa làm.
+
+Chỉ dùng thư viện có sẵn của Python 3 (không cần `pip install`).
+
+1. Copy `.env.example` (thư mục gốc repo) thành `.env`, dán key sau `OPENAI_API_KEY=`. `.env` đã nằm trong `.gitignore`.
+2. Từ thư mục gốc repo: `python prototype/ai-call/ai_chon_tool.py --all` → chạy 7 ca mẫu (2 ca đắt nhất, các ca khó của track, 1 ca bình thường). Không có `--all` thì chỉ chạy 1 lời gọi cho ca "Ừ ok".
+3. Thử ca lạ: `python prototype/ai-call/ai_chon_tool.py "tin nhắn của khách"`.
+4. Mọi lần chạy đều ghi nối vào [`ai-call/ai-log.md`](ai-call/ai-log.md) (bảng: model chọn gì → cổng mức tự chủ để lại gì → trợ lý nói gì). `ai-call/ai-log.json` giữ bản đầy đủ của lần chạy gần nhất (lý do model chọn, số token).

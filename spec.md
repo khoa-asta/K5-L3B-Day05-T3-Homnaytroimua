@@ -233,7 +233,8 @@ Tách `gui_yeu_cau_hoan_ve` đổi lời hứa từ **"Trợ lý hoàn tiền gi
 - **File:** [`prototype/index.html`](prototype/index.html), mở bằng trình duyệt. Hướng dẫn bấm và bảng đánh số: [`prototype/README.md`](prototype/README.md).
 - **Công cụ:** một file HTML + JavaScript, dựng bằng coding agent. Không backend, không đăng nhập.
 - **Phần mock:** dữ liệu đặt chỗ (dữ liệu dựng của track); câu trả lời của trợ lý (luật dựng sẵn theo từ khoá); việc xuất vé (đồng hồ 5 phút hoặc nút "Giả lập: vé mới đã xuất"); trang Hoàn tiền; các nút của nhân viên.
-- **Lời gọi AI thật:** không có.
+- **Lời gọi AI thật:** có, ở quyết định chính (đọc tin khách → chọn tool). Script [`prototype/ai-call/ai_chon_tool.py`](prototype/ai-call/ai_chon_tool.py) gọi OpenAI (`gpt-4o-mini`, temperature 0), chỉ đưa dữ liệu dựng của track; API key đọc từ `.env` (nằm trong `.gitignore`, không commit). Model chọn tool xong, **cổng mức tự chủ trong code** áp §4: `doi_chuyen_bay` chỉ thành thẻ xác nhận, `gui_yeu_cau_hoan_ve` hạ xuống bản nháp, trẻ dưới 12 tuổi bay một mình → chuyển nhân viên; cổng đã chặn thì câu trả lời của model cũng bị thay. Log 7 ca chạy thật: [`prototype/ai-call/ai-log.md`](prototype/ai-call/ai-log.md). Màn hình HTML vẫn dùng luật dựng sẵn để demo không cần mạng.
+- **Điều log chạy thật cho thấy:** ở 4/7 ca model tự chọn đúng tool *khó đảo hoặc bị cấm* — `doi_chuyen_bay` sau "Ừ ok", `gui_yeu_cau_hoan_ve` sau "Thôi huỷ hết đi", đổi vé cho bé 5 tuổi bay một mình — và ở ca bình thường model định nói *"Đã đổi vé cho cả 2 mẹ con"* khi chưa đổi gì. Cổng trong code chặn được cả bốn. Đây là bằng chứng cho §3 "lỗi mà sửa câu chữ không cứu được": prompt đã ghi rõ quy tắc mà model vẫn chọn sai, nên mức tự chủ phải nằm ở thiết kế, không nằm ở câu chữ.
 - **Hai màn hình:** Khách (khung điện thoại, chat trong Đặt chỗ của tôi) · Nhân viên hỗ trợ (bàn làm việc: hàng chờ + chi tiết ca). Có chế độ **xem song song** để thấy cùng lúc khách bấm gì và nhân viên nhận được gì.
 - **Ca khó bấm qua được từ đầu tới cuối:** Ca A ("Ừ ok" → thẻ xác nhận → đổi → "mình bảo 9h30 mà" → nhánh a hoàn tác hoặc nhánh b chuyển nhân viên) và Ca B ("Thôi huỷ hết đi" → bản nháp, không có nút gửi). Ô nhắn tin nhận ca lạ, trả lời đúng mức tự chủ ở §4.
 
@@ -291,7 +292,7 @@ Mỗi tiêu chí chấm được bằng cách đọc nhật ký tool (màn Nhân
 
 1. **Khách tự bấm nhầm trên thẻ khi vé đã xuất vẫn mất lần đổi miễn phí.** Thiết kế chỉ giảm thiệt hại (giữ chỗ chuyến đúng, chuyển nhân viên), không chặn được. T1 vẫn Pass vì khách đã xác nhận có cấu trúc — tiêu chí không bắt được lỗi người dùng loại này.
 2. **Cửa sổ hoàn tác trước khi xuất vé là giả định của nhóm.** Nếu hãng không cho huỷ lệnh đổi trong lúc chờ xuất vé, nhánh (a) mất và mọi ca đổi nhầm đi nhánh (b).
-3. **Prototype hiểu tin khách bằng từ khoá, không phải AI thật.** Câu ngoài bộ từ khoá rơi vào câu trả lời dự phòng (hỏi lại hoặc gặp nhân viên): an toàn, nhưng khách có thể phải nhắn lại. Nếu thay bằng AI thật, T1 vẫn giữ được vì cổng xác nhận nằm ở thẻ, không nằm ở việc model hiểu đúng hay sai.
+3. **Màn hình HTML hiểu tin khách bằng từ khoá.** Câu ngoài bộ từ khoá rơi vào câu trả lời dự phòng (hỏi lại hoặc gặp nhân viên): an toàn, nhưng khách có thể phải nhắn lại. Script gọi AI thật (`prototype/ai-call/`) cho thấy khi thay bằng model, T1 vẫn Pass nhờ cổng mức tự chủ trong code — dù model chọn `doi_chuyen_bay` / `gui_yeu_cau_hoan_ve` ở 4/7 ca. Cái giá còn lại: ở ca K9 (tự xưng nhân viên hãng) model vẫn giữ chỗ BM 205 theo lời tin nhắn; việc này đảo được (tự nhả sau 20 phút) nhưng cho thấy model vẫn bị nội dung tin nhắn dẫn dắt.
 4. **Ca B sau khi khách tự gửi:** không rút lại được — đúng với sản phẩm thật, ngoài thẩm quyền của trợ lý.
 
 ## §7. Demo
