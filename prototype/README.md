@@ -6,15 +6,16 @@
 
 **Hai màn hình:**
 
-- **Màn 1 · Khách:** cuộc chat với trợ lý trong Đặt chỗ của tôi.
-- **Màn 2 · Nhân viên hỗ trợ:** màn của người được báo khi trợ lý chuyển ca.
+- **Khách:** khung điện thoại, cuộc chat với trợ lý trong Đặt chỗ của tôi.
+- **Nhân viên hỗ trợ:** bàn làm việc (hàng chờ + chi tiết ca) của người được báo khi trợ lý chuyển ca.
+- Nút **"Xem song song"** trên thanh trên cùng hiện cả hai màn cạnh nhau.
 
 **Bấm qua ca demo:**
 
 1. Bấm "Ừ ok". Trợ lý không đổi vé mà hỏi lại bằng thẻ xác nhận.
 2. Trên thẻ: chọn chuyến, tích hành khách, bấm "Xác nhận đổi".
 3. Nhánh (a), vé chưa xuất: nhắn "Ơ sao lại 7h?? Mình bảo 9h30 mà!". Trợ lý giữ chỗ BM 205, khách bấm "Hoàn tác" rồi xác nhận lại.
-4. Nhánh (b), vé đã xuất: bấm "Giả lập: vé mới đã xuất ngay" rồi mới nhắn câu ở bước 3. Trợ lý giữ chỗ BM 205, chuyển nhân viên, hỏi "Nhầm ở đâu?". Mở Màn 2 để xem nhân viên thấy gì.
+4. Nhánh (b), vé đã xuất: bấm "Giả lập: vé mới đã xuất" rồi mới nhắn câu ở bước 3. Trợ lý giữ chỗ BM 205, chuyển nhân viên, hỏi "Nhầm ở đâu?". Bấm "Nhân viên" (hoặc "Xem song song") để xem nhân viên thấy gì.
 
 **Thử ca lạ:** gõ vào ô nhắn tin. Ví dụ: bồi thường, đổi tên người bay, cho bé bay một mình, tin tự xưng nhân viên hãng, số thẻ, hoặc câu trợ lý không hiểu. Câu trả lời đi theo luật dựng sẵn, đúng mức tự chủ ở spec §4.
 
@@ -22,16 +23,16 @@
 
 | Ảnh | Nội dung |
 |---|---|
-| [anh-1-khach.png](anh-1-khach.png) | Màn 1, toàn bộ ca: "huỷ hết đi" → quay lại đổi → "Ừ ok" → xác nhận → vé xuất → "mình bảo 9h30 mà" → chuyển nhân viên |
-| [anh-2-nhanvien.png](anh-2-nhanvien.png) | Màn 2: nhân viên nhận ca đổi nhầm |
-| [anh-3-the-xac-nhan.png](anh-3-the-xac-nhan.png) | Màn 1: thẻ xác nhận đổi chuyến lúc còn bấm được (sau "Ừ ok") |
+| [anh-1-khach.png](anh-1-khach.png) | Màn Khách, toàn bộ ca: "huỷ hết đi" → quay lại đổi → "Ừ ok" → xác nhận → vé xuất → "mình bảo 9h30 mà" → chuyển nhân viên |
+| [anh-2-nhanvien.png](anh-2-nhanvien.png) | Màn Nhân viên: nhận ca đổi nhầm |
+| [anh-3-the-xac-nhan.png](anh-3-the-xac-nhan.png) | Màn Khách: thẻ xác nhận đổi chuyến lúc còn bấm được (sau "Ừ ok") |
 
 | Số | Ở đâu | Nguyên tắc | Mức tự chủ |
 |---|---|---|---|
 | 1 | Nhãn "Trợ lý AI" trên mọi tin; lời giới thiệu đầu cuộc chat nói rõ việc làm được, việc không làm | G1 (+ Luật 134/2025 Điều 11) | — |
-| 2 | Khung "Mình chắc / Mình chưa chắc" và dòng "Dựa vào" | G11 + PAIR Explainability | — |
+| 2 | Hai dòng "Chắc / Chưa chắc" và dòng "Dựa vào" | G11 + PAIR Explainability | — |
 | 3 | Sau "Ừ ok": "Mình chưa đổi vé đâu nhé…", hỏi chuyến nào, cho ai | G10 | — |
-| 4 | Khung giữ chỗ: đếm ngược 20:00, "Nhả chỗ", "Giữ thêm 20 phút" | G8 | `giu_cho_chuyen_moi` · tự làm (đảo được) |
+| 4 | Thanh giữ chỗ ghim trên đầu chat: đếm ngược 20:00, nút "Nhả", "+20 phút" | G8 | `giu_cho_chuyen_moi` · tự làm (đảo được) |
 | 5 | Thẻ xác nhận: chọn chuyến (BM 217 bị khoá kèm lý do) + tích từng hành khách + dòng tóm tắt "dùng lần đổi miễn phí duy nhất"; nút chỉ bật khi đủ | — | `doi_chuyen_bay` · cần khách duyệt |
 | 6 | Lệnh đổi đang xuất vé, có nút "Hoàn tác" và đếm ngược (nhánh a) | G9 | `doi_chuyen_bay` · hoàn tác trước khi xuất vé |
 | 7 | Nhánh (b): giữ chỗ chuyến đúng + "Đã chuyển nhân viên · ưu tiên" | PAIR Errors + Graceful Failure | `chuyen_nhan_vien` · tự làm |

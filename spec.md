@@ -92,7 +92,7 @@ Nhãn mức hại: **nhẹ** (khách tự thấy, tự sửa) · **sửa đượ
 - **AI nói (nguyên văn):**
   > "Mình **chưa đổi vé** đâu nhé — 'ok' của bạn mình chưa chắc là ok giữ chỗ hay ok đổi sang 07:00. Đổi vé sẽ dùng **lần đổi miễn phí duy nhất** của bạn, nên bạn chọn giúp mình ở thẻ dưới: **chuyến nào** và **cho ai**. Chỗ BM 201 cho 2 người vẫn đang được giữ."
 - **Khách thấy:** nhãn "Trợ lý AI" · khung **"Mình chắc / Mình chưa chắc"** (chắc: chuyến huỷ do bão, số chỗ lúc 15:00 — chưa chắc: bạn muốn 07:00 hay 09:30) · dòng "Dựa vào: đặt chỗ TRV-7Q2K, tra lúc 15:00" · khung giữ chỗ có đếm ngược 20:00 và nút "Nhả chỗ" · **thẻ xác nhận**: chọn 1 chuyến (BM 201 / BM 205; BM 217 bị khoá kèm lý do "còn 1 chỗ, không đủ cho 2 người") + tích từng hành khách (An, Bình) + một dòng tóm tắt cập nhật theo lựa chọn: "BM 213 → BM 201 · 13/11 07:00 · 2 hành khách · phí 0 đ · dùng lần đổi miễn phí duy nhất". Nút "Xác nhận đổi" chỉ bật khi đã chọn chuyến và ít nhất một hành khách. Chỉ tích bé Bình → nút đổi thành "Chuyển nhân viên" (trẻ 5 tuổi không bay một mình).
-- **Khách làm tiếp:** chọn trên thẻ rồi bấm xác nhận · bấm "Nhả chỗ" · nhắn tiếp · bấm "Gặp nhân viên". **Không làm gì:** sau 20 phút chỗ tự nhả, vé cũ giữ nguyên, lần đổi miễn phí vẫn còn — 5 phút trước khi hết giờ AI nhắn nhắc và hỏi có giữ tiếp không.
+- **Khách làm tiếp:** chọn trên thẻ rồi bấm xác nhận · bấm "Nhả" trên thanh giữ chỗ · nhắn tiếp · bấm "Gặp nhân viên". **Không làm gì:** sau 20 phút chỗ tự nhả, vé cũ giữ nguyên, lần đổi miễn phí vẫn còn — 5 phút trước khi hết giờ AI nhắn nhắc và hỏi có giữ tiếp không.
 - **Ai được báo:** chưa ai — chưa có gì sai.
 
 **Bước 2 — Khi khách báo đổi nhầm** (khách đã bấm xác nhận BM 201, rồi nhắn *"Ơ sao lại 7h?? Mình bảo 9h30 mà!"*). Hai nhánh, tuỳ vé mới đã xuất chưa:
@@ -104,7 +104,7 @@ Nhãn mức hại: **nhẹ** (khách tự thấy, tự sửa) · **sửa đượ
 - **Nhánh (b) — vé mới đã xuất.**
   > "Mình xin lỗi. Vé **BM 201 đã xuất** nên mình **không tự đổi lại được**, và lần đổi miễn phí đã dùng. Mình đã **giữ 2 chỗ BM 205 · 09:30** trong 20 phút và **chuyển bạn sang nhân viên hỗ trợ** (ưu tiên, chờ khoảng 5 phút). Nhân viên thấy sẵn toàn bộ diễn biến, bạn không phải kể lại. Phí đổi lần hai (nếu có) nhân viên sẽ báo — mình không hứa trước được."
 
-  Khách thấy: khung "Đã chuyển nhân viên · ưu tiên · chờ ~5 phút"; khung giữ chỗ BM 205 có đếm ngược; câu hỏi feedback **"Nhầm ở đâu?"** với 3 lựa chọn: *mình bấm nhầm* / *trợ lý hiểu sai ý mình* / *lý do khác*.
+  Khách thấy: khung "Đã chuyển nhân viên · ưu tiên · chờ ~5 phút"; thanh giữ chỗ BM 205 có đếm ngược ghim trên đầu chat; câu hỏi feedback **"Nhầm ở đâu?"** với 3 lựa chọn: *mình bấm nhầm* / *trợ lý hiểu sai ý mình* / *lý do khác*.
   Ai được báo: **nhân viên hỗ trợ, ngay lập tức**, vào hàng ưu tiên (có trẻ nhỏ + chỗ đang giữ có hạn). Nhân viên thấy: tóm tắt ca do AI soạn, tin khách nguyên văn, nhật ký từng lần AI gọi tool (giờ, tool, mức tự chủ, ai xác nhận), chỗ đang giữ và thời gian còn lại, câu trả lời "Nhầm ở đâu?" của khách. Chỗ giữ sắp hết mà nhân viên chưa nhận ca → AI tự giữ lại (`giu_cho_chuyen_moi` là việc tự làm) và báo khách.
 
 **Quyết định — hỏi lại / đoán có báo / chuyển người:**
@@ -132,7 +132,7 @@ Nhãn mức hại: **nhẹ** (khách tự thấy, tự sửa) · **sửa đượ
   > 3. Bạn **vẫn còn 1 lần đổi miễn phí** trong 48 giờ, nếu muốn bay chuyến khác.
   >
   > Mình đã soạn sẵn yêu cầu hoàn vé cho bạn kiểm tra. **Mình không gửi thay bạn** — nếu vẫn muốn hoàn, bạn mở trang Hoàn tiền và tự bấm gửi."
-- **Khách thấy:** thẻ **"Bản nháp — chưa gửi"**: mã TRV-7Q2K, hành khách (tích từng người, mặc định chưa tích ai — "hết" chưa chắc là cả hai), lý do "Hãng huỷ chuyến (thời tiết)", tiền về phương thức gốc, tối đa 90 ngày. Hai nút: **"Mở trang Hoàn tiền (bạn tự gửi)"** và **"Quay lại đổi chuyến"**. **Trong chat không có nút "Gửi yêu cầu hoàn vé"**. Khung giữ chỗ BM 201 vẫn chạy đếm ngược.
+- **Khách thấy:** thẻ **"Bản nháp — chưa gửi"**: mã TRV-7Q2K, hành khách (tích từng người, mặc định chưa tích ai — "hết" chưa chắc là cả hai), lý do "Hãng huỷ chuyến (thời tiết)", tiền về phương thức gốc, tối đa 90 ngày. Hai nút: **"Mở trang Hoàn tiền (bạn tự gửi)"** và **"Quay lại đổi chuyến"**. **Trong chat không có nút "Gửi yêu cầu hoàn vé"**. Thanh giữ chỗ BM 201 vẫn chạy đếm ngược.
 - **Khách làm tiếp:** quay lại đổi chuyến (chỗ vẫn giữ) · mở trang Hoàn tiền và tự gửi theo luồng có sẵn của app · gặp nhân viên. **Không làm gì:** không có gì được gửi; chỗ giữ tự nhả sau 20 phút.
 - **Ai được báo:** không ai, vì chưa có gì sai và không có gì được gửi. Khách nhắn đòi hoàn lần nữa kèm lời bực bội, hoặc hỏi "sao không hoàn luôn cho mình" → AI đề nghị gặp nhân viên, không tự chuyển (chuyển khi khách không muốn cũng làm khách mất thời gian).
 
@@ -157,7 +157,7 @@ Nhãn mức hại: **nhẹ** (khách tự thấy, tự sửa) · **sửa đượ
 |---|---|
 | **G1 — Làm rõ hệ thống làm được gì** (+ Điều 11 khoản 1 Luật 134/2025/QH15: cho người dùng biết đang làm việc với AI) | Nhãn "Trợ lý AI" trên mọi tin của AI; dòng giới thiệu "Mình giữ chỗ được ngay; đổi vé luôn cần bạn xác nhận; mình không gửi hoàn vé thay bạn". |
 | **G10 — Thu hẹp phạm vi khi nghi ngờ** | Ca A bước 1: "ok" → AI không đổi, hỏi lại bằng thẻ chọn chuyến + hành khách. |
-| **G11 + PAIR Explainability** | Khung "Mình chắc / Mình chưa chắc" và dòng "Dựa vào: đặt chỗ TRV-7Q2K, tra lúc 15:00" — khách tự kiểm số chỗ, lý do huỷ. |
+| **G11 + PAIR Explainability** | Hai dòng "Chắc / Chưa chắc" và dòng "Dựa vào: đặt chỗ TRV-7Q2K, tra lúc 15:00" — khách tự kiểm số chỗ, lý do huỷ. |
 | **G9 — Sửa dễ dàng** | Ca A nhánh (a): nút "Hoàn tác" + thẻ điền sẵn BM 205; thẻ xác nhận cho đổi chuyến, bỏ tích hành khách ngay trên thẻ. |
 | **G15 — Mời feedback chi tiết** | Ca A nhánh (b): "Nhầm ở đâu? — mình bấm nhầm / trợ lý hiểu sai ý / lý do khác". |
 | **PAIR Errors + Graceful Failure** | Nhánh (b): chuyển nhân viên kèm tóm tắt + giữ chỗ chuyến đúng — mỗi lỗi có một đường lui. |
@@ -176,7 +176,7 @@ Nhãn mức hại: **nhẹ** (khách tự thấy, tự sửa) · **sửa đượ
 | Tool | Mức | Ai duyệt · thấy gì · quá hạn thì sao | Lý do theo cái giá khi sai | Phương án đã loại |
 |---|---|---|---|---|
 | `tra_cuu_dat_cho` | **Tự làm** | — | Chỉ đọc: sai thì không mất gì trên đặt chỗ. Cái giá là đọc sai (K1) → chặn bằng luật: mọi câu về giờ bay phải kèm trạng thái chuyến. | Cần duyệt: vô nghĩa, chỉ làm khách chờ. |
-| `giu_cho_chuyen_moi` | **Tự làm**, có đếm ngược + nút "Nhả chỗ". **Luật thêm:** chỉ giữ chuyến đủ chỗ cho **mọi** hành khách cần bay; không giữ cho trẻ dưới 12 tuổi một mình. | — | Sai thì rẻ: hết 20 phút tự nhả, vé cũ còn nguyên, lần đổi còn nguyên. **Chờ người mới đắt:** BM 217 còn 1 chỗ, BM 205 còn 4 chỗ — chờ duyệt là có thể hết. Cái giá nhỏ còn lại: giữ nhầm thì giữ một chỗ người khác cần trong 20 phút. | Cần khách duyệt: thêm một bước đúng lúc khách gấp nhất, mà giữ nhầm thì tự hết. |
+| `giu_cho_chuyen_moi` | **Tự làm**, có thanh đếm ngược + nút "Nhả". **Luật thêm:** chỉ giữ chuyến đủ chỗ cho **mọi** hành khách cần bay; không giữ cho trẻ dưới 12 tuổi một mình. | — | Sai thì rẻ: hết 20 phút tự nhả, vé cũ còn nguyên, lần đổi còn nguyên. **Chờ người mới đắt:** BM 217 còn 1 chỗ, BM 205 còn 4 chỗ — chờ duyệt là có thể hết. Cái giá nhỏ còn lại: giữ nhầm thì giữ một chỗ người khác cần trong 20 phút. | Cần khách duyệt: thêm một bước đúng lúc khách gấp nhất, mà giữ nhầm thì tự hết. |
 | `doi_chuyen_bay` | **Cần khách duyệt** trên thẻ có cấu trúc. **Luật thêm:** tin nhắn gõ tự do không bao giờ được tính là xác nhận; + cửa sổ hoàn tác trước khi vé xuất *(giả định, xem §3)*. | **Khách** duyệt. Khách thấy: chuyến mới, giờ, từng hành khách được tích, phí, dòng "dùng lần đổi miễn phí duy nhất". Quá hạn (khách không bấm): không đổi; chỗ giữ tự nhả sau 20 phút; vé cũ và lần đổi còn nguyên. | Khó đảo: mất lần đổi miễn phí duy nhất, chuyến đúng có thể hết chỗ (K4, K5, K11). Một lần bấm có cấu trúc chặn được đổi nhầm, và vì chỗ đã giữ nên chờ khách bấm không mất gì. | Tự làm + hoàn tác: hoàn tác chỉ cứu khi khách đọc kịp. Nhân viên duyệt: chậm, chuyến hết chỗ trong lúc chờ (lời khách trong track: "đừng bắt tôi bấm qua mười màn hình"). |
 | `gui_yeu_cau_hoan_ve` | **Tách thành hai bước:** `soan_yeu_cau_hoan` = **tự làm** (chỉ là bản nháp) · gửi đi = **cấm với AI** — khách tự gửi trên trang Hoàn tiền có sẵn. | Không ai duyệt trong chat, vì AI không gửi. Khách tự gửi theo luồng có sẵn ("đọc chính sách → chọn lý do, hành khách → gửi"). | Không đảo được: mất chỗ, chờ tới 90 ngày, có thể là voucher (K6). Một bước xác nhận trong chat không đủ chặn với người đang bực. Chờ thì gần như không mất gì: tiền hoàn vốn chậm. | Cần khách duyệt trong chat (cách prototype mẫu chọn): xem §3 ca B. Cấm hoàn toàn, không soạn sẵn: khách vẫn có quyền hoàn, bỏ trống thì khách phải tự mò, AI kém hữu ích. |
 | `chuyen_nhan_vien` | **Tự làm.** **Luật thêm:** bắt buộc chuyển khi trẻ bay một mình, đổi tên người bay, đổi nhầm mà vé đã xuất. | — | Đảo được; chuyển thừa chỉ tốn công nhân viên. Chuyển muộn thì đắt hơn: ca đổi nhầm (K5), trẻ bay một mình (K7) chỉ người làm được. | Cần duyệt: khách đang gặp ca khó lại phải bấm thêm để được gặp người. |
@@ -232,9 +232,9 @@ Tách `gui_yeu_cau_hoan_ve` đổi lời hứa từ **"Trợ lý hoàn tiền gi
 
 - **File:** [`prototype/index.html`](prototype/index.html), mở bằng trình duyệt. Hướng dẫn bấm và bảng đánh số: [`prototype/README.md`](prototype/README.md).
 - **Công cụ:** một file HTML + JavaScript, dựng bằng coding agent. Không backend, không đăng nhập.
-- **Phần mock:** dữ liệu đặt chỗ (dữ liệu dựng của track); câu trả lời của trợ lý (luật dựng sẵn theo từ khoá); việc xuất vé (đồng hồ 5 phút hoặc nút "Giả lập: vé mới đã xuất ngay"); trang Hoàn tiền; các nút của nhân viên.
+- **Phần mock:** dữ liệu đặt chỗ (dữ liệu dựng của track); câu trả lời của trợ lý (luật dựng sẵn theo từ khoá); việc xuất vé (đồng hồ 5 phút hoặc nút "Giả lập: vé mới đã xuất"); trang Hoàn tiền; các nút của nhân viên.
 - **Lời gọi AI thật:** không có.
-- **Hai màn hình:** Màn 1 · Khách (chat trong Đặt chỗ của tôi) · Màn 2 · Nhân viên hỗ trợ (người được báo).
+- **Hai màn hình:** Khách (khung điện thoại, chat trong Đặt chỗ của tôi) · Nhân viên hỗ trợ (bàn làm việc: hàng chờ + chi tiết ca). Có chế độ **xem song song** để thấy cùng lúc khách bấm gì và nhân viên nhận được gì.
 - **Ca khó bấm qua được từ đầu tới cuối:** Ca A ("Ừ ok" → thẻ xác nhận → đổi → "mình bảo 9h30 mà" → nhánh a hoàn tác hoặc nhánh b chuyển nhân viên) và Ca B ("Thôi huỷ hết đi" → bản nháp, không có nút gửi). Ô nhắn tin nhận ca lạ, trả lời đúng mức tự chủ ở §4.
 
 ### Ảnh có đánh số
@@ -246,9 +246,9 @@ Tách `gui_yeu_cau_hoan_ve` đổi lời hứa từ **"Trợ lý hoàn tiền gi
 | Số | Thể hiện gì | Nguyên tắc HAX/PAIR | Mức tự chủ |
 |---|---|---|---|
 | 1 | Nhãn "Trợ lý AI" trên mọi tin; lời giới thiệu nói rõ: giữ chỗ được ngay, đổi vé cần khách xác nhận, không gửi hoàn vé thay khách | G1 (+ Luật 134/2025 Điều 11 khoản 1) | — |
-| 2 | Khung "Mình chắc / Mình chưa chắc" + dòng "Dựa vào: đặt chỗ TRV-7Q2K, tra lúc 15:00 · chính sách Bay Mẫu" | G11 + PAIR Explainability | — |
+| 2 | Hai dòng "Chắc / Chưa chắc" + dòng "Dựa vào: đặt chỗ TRV-7Q2K, tra lúc 15:00 · chính sách Bay Mẫu" | G11 + PAIR Explainability | — |
 | 3 | Sau "Ừ ok": "Mình chưa đổi vé đâu nhé…" và hỏi chuyến nào, cho ai | G10 | — |
-| 4 | Khung giữ chỗ: đếm ngược 20:00, "Nhả chỗ", "Giữ thêm 20 phút" | G8 | `giu_cho_chuyen_moi` · tự làm, có đường hoàn tác |
+| 4 | Thanh giữ chỗ ghim trên đầu chat: đếm ngược 20:00, nút "Nhả", "+20 phút" | G8 | `giu_cho_chuyen_moi` · tự làm, có đường hoàn tác |
 | 5 | Thẻ xác nhận: chọn chuyến (BM 217 bị khoá: "còn 1 chỗ, không đủ cho 2 người") + tích từng hành khách + tóm tắt "dùng lần đổi miễn phí duy nhất"; nút chỉ bật khi đủ; chỉ tích bé Bình thì nút thành "Chuyển nhân viên" | G10 (hỏi có cấu trúc) | `doi_chuyen_bay` · cần khách duyệt |
 | 6 | Lệnh đổi đang xuất vé, nút "Hoàn tác" + đếm ngược (nhánh a) | G9 | `doi_chuyen_bay` · hoàn tác trước khi xuất vé |
 | 7 | Nhánh (b): giữ 2 chỗ BM 205 + "Đã chuyển nhân viên · ưu tiên · chờ ~5 phút" | PAIR Errors + Graceful Failure | `chuyen_nhan_vien` · tự làm |
@@ -260,13 +260,13 @@ Tách `gui_yeu_cau_hoan_ve` đổi lời hứa từ **"Trợ lý hoàn tiền gi
 
 | Chỗ cần hiện | Đã cân nhắc | Chọn | Vì sao · loại cách kia vì sao |
 |---|---|---|---|
-| Độ chắc | (a) con số % độ tin cậy · (b) nhãn "Mình chưa chắc" một dòng · (c) khung hai cột "Mình chắc / Mình chưa chắc" | (c) | Khách đang vội không biết làm gì với "82%". Một nhãn "chưa chắc" (b) không nói *chắc phần nào*: ở ca này dữ liệu (huỷ do bão, số chỗ) là chắc, chỉ ý khách là chưa chắc — tách hai cột cho khách thấy mình cần trả lời đúng một điều. |
+| Độ chắc | (a) con số % độ tin cậy · (b) nhãn "Mình chưa chắc" một dòng · (c) hai dòng tách riêng "Chắc / Chưa chắc" | (c) | Khách đang vội không biết làm gì với "82%". Một nhãn "chưa chắc" (b) không nói *chắc phần nào*: ở ca này dữ liệu (huỷ do bão, số chỗ) là chắc, chỉ ý khách là chưa chắc — tách hai dòng cho khách thấy mình cần trả lời đúng một điều. |
 | Xác nhận đổi vé | (a) hỏi lại bằng câu chữ · (b) nút "Xác nhận" một chạm cho chuyến AI đề xuất · (c) thẻ chọn chuyến + tích từng hành khách | (c) | (a) khách lại trả lời "ok" → vòng lặp. (b) chỉ xác nhận *chuyến*, không xác nhận *cho ai* — lỗi K3, K7 lọt qua. (c) buộc trả lời đủ hai câu, và cho đặt luật ngay trên thẻ (khoá BM 217, chỉ tích bé Bình → chuyển nhân viên). |
 | Hoàn vé | (a) hộp thoại xác nhận + tích ô "mình hiểu" rồi AI gửi · (b) bản nháp, khách tự gửi trên trang Hoàn tiền | (b) | (a) vẫn là một lần bấm trong lúc đang bực, với việc không đảo được. (b) **không có nút gửi trên màn hình** — việc cấm thì không có nút làm. |
 | Ai được báo | (a) chỉ một câu "đã chuyển nhân viên" trên màn khách · (b) dựng thêm màn nhân viên | (b) | Spec §3 hứa "nhân viên thấy sẵn toàn bộ diễn biến, khách không phải kể lại" — chỉ màn nhân viên mới kiểm được lời hứa đó: nhật ký ghi rõ việc nào AI tự làm, việc nào khách bấm. |
 | Hoàn tác | (a) nút hoàn tác luôn có sau khi đổi (như AI tự làm + hoàn tác) · (b) hai nhánh theo trạng thái vé | (b) | (a) hứa một việc không phải lúc nào cũng làm được (vé đã xuất). (b) chỉ hiện "Hoàn tác" khi còn làm được; hết thì hiện đúng sự thật và chuyển người. |
 
-**Khác prototype mẫu:** mẫu so sánh một ca ở ba mức tự chủ; prototype của nhóm đi sâu một ca qua bước *sau khi sai* (đổi nhầm, hai nhánh), thêm màn nhân viên, thẻ xác nhận theo từng hành khách, và hoàn vé không có nút gửi.
+**Khác prototype mẫu:** mẫu so sánh một ca ở ba mức tự chủ (nút chuyển mức, bảng chú thích bên cạnh); prototype của nhóm đi sâu một ca qua bước *sau khi sai* (đổi nhầm, hai nhánh), thêm bàn làm việc nhân viên và chế độ xem song song khách/nhân viên, thẻ xác nhận theo từng hành khách, thanh giữ chỗ ghim trên đầu chat thay vì nằm trong luồng tin, hoàn vé không có nút gửi, và ô nhắn tin tự do để thử ca lạ.
 
 ## §6. Tốt là gì
 
