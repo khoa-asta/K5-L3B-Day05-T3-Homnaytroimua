@@ -4,9 +4,9 @@
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| Lê Viết Khoa |2A202603737  |  |
+| Ngô Chí Vĩnh |2A202603724  |  |
+| Phan Trung Hiếu |2A202603763  |  |
 
 > Dữ liệu dùng trong bài là dữ liệu dựng của track (đặt chỗ TRV-7Q2K, hãng dựng "Bay Mẫu"). Không chat với sản phẩm thật, không dùng dữ liệu thật.
 
