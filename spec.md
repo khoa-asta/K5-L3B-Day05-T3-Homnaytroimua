@@ -4,7 +4,7 @@
 
 | Họ và Tên | Mã Học Viên | Việc đã làm |
 |---|---|---|
-| Lê Viết Khoa | 2A202603737 | Cùng nhóm làm chặng 1–4. Dựng prototype (`prototype/index.html`: màn Khách, bàn làm việc Nhân viên, thẻ xác nhận, thanh giữ chỗ, hai nhánh đổi nhầm), chụp 3 ảnh đánh số, viết §5 và `prototype/README.md`, quản lý repo. Bấm prototype khi demo. |
+| Lê Viết Khoa | 2A202603737 | Cùng nhóm làm chặng 1–4. Dựng prototype (`prototype/index.html`: màn Khách, bàn làm việc Nhân viên, thẻ xác nhận, thanh giữ chỗ, hai nhánh đổi nhầm), chụp 3 ảnh đánh số, viết §5 và `prototype/README.md`, quản lý repo. Làm lời gọi AI thật (`prototype/ai-call/`): cấu hình `.env`, chạy script với OpenAI, thêm chặn đổi vé cho trẻ bay một mình và câu trả lời an toàn khi cổng mức tự chủ đã chặn, lưu log 7 ca. Bấm prototype khi demo. |
 | Ngô Chí Vĩnh | 2A202603724 | Cùng nhóm làm chặng 1–4. Viết §3: câu AI nói nguyên văn cho Ca A, Ca B, bốn đường đi, phân loại lỗi, nguyên tắc HAX/PAIR, lỗi sửa câu chữ không cứu được. Soát câu chữ trên prototype (không hứa bồi thường, không xin số thẻ). Chấm thử §6. Trình bày phần "khi AI sai" khi demo. |
 | Phan Trung Hiếu | 2A202603763 | Cùng nhóm làm chặng 1–4. Cầm bút §1, §2 (11 kịch bản, chọn 2 ca đắt nhất), §4 (mức tự chủ, tool khó xếp nhất, thử trên 3 kịch bản, luật thêm), viết tiêu chí §6, kịch bản demo §7. Mở đầu demo và trả lời ca lạ. |
 
